@@ -1,0 +1,41 @@
+// Bật/tắt menu bên trái
+// Bật/tắt menu bên trái
+#body.menu #content {
+    left: 0!important;
+}
+
+#content {
+    left: -50px;
+    right: 0;
+}
+
+// Bật/tắt menu bên trái - End
+// 
+@layout_view: "home",
+"calendal",
+"manga",
+"explorer",
+"Đổi tên",
+"idea",
+"setting";
+& {
+    .for(@layout_view);
+    .-each(@value) {
+        #body[layout-view="@{value}"] {
+            #menu>div[layout="@{value}"] {
+                background-color: #2d3136;
+            }
+            #main>section[name="@{value}"] {
+                z-index: 2!important;
+                opacity: 1!important;
+            }
+        }
+    }
+}
+
+//----- 
+#body.manga_view_margin {
+    .reader img {
+        margin: 20px auto!important;
+    }
+}

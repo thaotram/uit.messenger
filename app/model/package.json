@@ -1,0 +1,5 @@
+{
+  "main"   : "model.js",
+  "name"   : "model",
+  "version": "1.0.0"
+}

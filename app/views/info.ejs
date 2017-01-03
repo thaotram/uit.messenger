@@ -1,0 +1,55 @@
+<html>
+
+<head>
+	<title>Chat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="icon" href="img/icon.png" />
+	<link rel="stylesheet/less" href="style/index.less" />
+	<link rel="stylesheet" type="text/css" href="style/style.css" />
+	<script src="script/lib/mousetrap.all.min.js"></script>
+	<script src="script/lib/moment.min.js"></script>
+	<script src="script/lib/moment.vi.js"></script>
+	<script src="script/lib/less.min.js"></script>
+	<script src="script/lib/anime.min.js"></script>
+</head>
+
+<body>
+	<div id="body" layout-view="home" class="col menu">
+		<header class="row dark size-50">
+			<input icon type="radio" name='layout-view' id="layout_view_f1" value="home" checked/>
+			<label icon for="layout_view_f1">
+				<span class="icon"></span>
+			</label>
+			<div cursor>
+				<span class="text">Demo ứng dụng chat</span>
+			</div>
+			<div space></div>
+			<input icon type="radio" name='layout-view' id="layout_view_f2" value="home" />
+			<label icon for="layout_view_f2">
+				<span class="icon"></span>
+			</label>
+		</header>
+		<main>
+			<div id="content" class="row">
+				<div id="main" class="light">
+					<section name="home">
+						<div class="box row">
+							<div id="description" class="content">
+								<iframe src="https://onedrive.live.com/embed?cid=77A9ACDC3671DABB&resid=77A9ACDC3671DABB%21236773&authkey=AJ8TSjxZLiBntsA&em=2" frameborder="0" scrolling="no" style="width: 100%; height: 100%"></iframe>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+	</div>
+	<!--
+		<script src="script/js.js"></script>
+	-->
+	<script>
+		less.watch();
+	</script>
+</body>
+
+</html>

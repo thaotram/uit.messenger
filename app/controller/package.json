@@ -1,0 +1,5 @@
+{
+  "main"   : "controller.js",
+  "name"   : "controller",
+  "version": "1.0.0"
+}

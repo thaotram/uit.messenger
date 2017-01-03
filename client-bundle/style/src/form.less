@@ -1,0 +1,171 @@
+input {
+    &:focus {
+        outline: 0;
+    }
+}
+
+[input] {
+    margin: 6px 0;
+    font-family: Roboto, sans-serif;
+    &[input=range] {
+        height: 28px;
+        >* {
+            margin: 0 5px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        >label {
+            line-height: 30px;
+            white-space: nowrap;
+        }
+        >input[type=range] {
+            -webkit-appearance: none;
+            height: 28px;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+            background-color: transparent;
+            &::-webkit-slider-runnable-track {
+                height: 4px;
+                border-radius: 4px;
+                background: #f7dada;
+            }
+            &::-webkit-slider-thumb {
+                position: absolute;
+                -webkit-appearance: none;
+                top: 0;
+                bottom: 0;
+                height: 16px;
+                width: 16px;
+                border-radius: 16px;
+                background-color: #E48181;
+                transition: all 0.5s;
+                margin: 6px 0;
+            }
+        }
+        >input[type=number] {
+            width: 36px;
+            border-radius: 16px;
+        }
+    }
+    &[input=checkbox] {
+        >input[type=checkbox] {
+            display: none;
+            &:checked+label {
+                &:before {
+                    background-color: #e48181;
+                }
+                &:after {
+                    border-color: #FFF;
+                }
+            }
+            &+label {
+                position: relative;
+                display: inline-block;
+                padding: 0 0 0 22px;
+                line-height: 20px;
+                cursor: pointer;
+                user-select: none;
+                -webkit-user-select: none;
+                &:before {
+                    position: absolute;
+                    content: "";
+                    top: 1px;
+                    left: 0px;
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid #e48181;
+                    border-radius: 2px;
+                    transition: background-color 0.2s;
+                }
+                &:after {
+                    position: absolute;
+                    content: "";
+                    top: 4px;
+                    left: 1px;
+                    width: 4px;
+                    height: 7px;
+                    transition: border-color 0.2s;
+                    border: solid transparent;
+                    border-width: 0 2px 2px 0;
+                    transform: rotateZ(45deg);
+                    transform-origin: 100% 100%;
+                }
+            }
+        }
+    }
+    &[input=radio] {
+        >input[type="radio"] {
+            display: none;
+            &:checked+label {
+                &:before {
+                    background-color: #e48181;
+                }
+            }
+            &+label {
+                position: relative;
+                display: inline-block;
+                padding-left: 22px;
+                line-height: 20px;
+                cursor: pointer;
+                user-select: none;
+                -webkit-user-select: none;
+                &:before,
+                &:after {
+                    position: absolute;
+                    content: "";
+                }
+                &:before {
+                    top: 1px;
+                    left: 0;
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid #e48181;
+                    border-radius: 50%;
+                    transition: background-color 0.2s;
+                }
+            }
+        }
+    }
+}
+
+[icon],
+.iconContainer {
+    &[type=checkbox] {
+        display: none!important;
+    }
+    &[type=radio] {
+        display: none!important;
+    }
+}
+
+// Các thẻ input dùng chung cho các cái ở trên
+input[type=number] {
+    border: 0;
+    padding: 6px;
+    background-color: #f7dada;
+    transition: all 0.2s;
+    text-align: center;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+input[type="text"] {
+    // font-family: 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+    // font-weight: 300;
+    padding: 0 12px;
+    font-size: 14px;
+    border: 0;
+    transition: all 0.2s;
+}
+
+input[type="file"] {
+    display: none;
+}

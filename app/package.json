@@ -1,0 +1,5 @@
+{
+  "main"   : "mvc.js",
+  "name"   : "mvc",
+  "version": "1.0.0"
+}

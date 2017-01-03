@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+	word-wrap: break-word;
+	transition: all 0.2s
+}
+
+html,
+body {
+	// user-select: none;
+	// -webkit-user-select: none;
+	font-family: Roboto, sans-serif; // 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 20px;
+	color: rgba(0, 0, 0, 0.87);
+	word-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+li,
+ol,
+ul {
+	list-style-position: inside;
+	margin: 0 0 0 0.4em;
+	padding: 0;
+}
+
+::selection {
+	// background: rgba(222, 98, 98, 0.8);
+	background: rgba(0, 0, 0, 0.3);
+	color: #FFF;
+	text-shadow: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 24px;
+	line-height: 30px;
+}
+
+h2 {
+	font-size: 22px;
+	line-height: 28px;
+}
+
+h3 {
+	font-size: 20px;
+	line-height: 26px;
+}
+
+h4 {
+	font-size: 18px;
+	line-height: 24px;
+}
+
+h5 {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+h6 {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+hr {
+	background-color: #D4D4D4;
+	border: 0px;
+	clear: both;
+	color: #D4D4D4;
+	height: 1px;
+	margin-bottom: 0;
+}
+
+// ----- scrollbar -----
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.2);
+	border: 2px solid rgba(0, 0, 0, 0.0);
+}
+
+::-webkit-scrollbar-corner {
+	background-color: rgba(0, 0, 0, 0.3)
+}

@@ -1,0 +1,47 @@
+[{
+    "key": "q",
+    "command": "layout.view",
+    "paremeter": "home"
+}, {
+    "key": "w",
+    "command": "layout.view",
+    "paremeter": "calendal"
+}, {
+    "key": "e",
+    "command": "layout.view",
+    "paremeter": "manga"
+}, {
+    "key": "r",
+    "command": "layout.view",
+    "paremeter": "explorer"
+}, {
+    "key": "t",
+    "command": "layout.view",
+    "paremeter": "idea"
+}, {
+    "key": "y",
+    "command": "layout.view",
+    "paremeter": "setting"
+}, {
+    "key": "f1",
+    "command": "open.firstFile"
+}, {
+    "key": "f2",
+    "command": "explorer.control.file.rename"
+}, {
+    "key": "f4",
+    "command": "open.filesInPhotoshop"
+}, {
+    "key": "right",
+    "command": "manga.control.next"
+}, {
+    "key": "left",
+    "command": "manga.control.previous"
+}, {
+    "key": "backspace",
+    "command": "explorer.control.folder.up"
+}, {
+    "key": "esc",
+    "type": "global",
+    "command": "explorer.control.file.select.none"
+}]
