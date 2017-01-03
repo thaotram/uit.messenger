@@ -19,11 +19,11 @@ module.exports = (function () {
             "name": this.name,
             "status": this.status,
             "color": this.color,
-        }
-    }
+        };
+    };
     return {
         newUser: function (obj, sessionID, socketID) {
-            return new user(obj, sessionID, socketID)
+            return new user(obj, sessionID, socketID);
         },
         list: db.userDB.list,
         exist: db.userDB.exist,

@@ -2,19 +2,20 @@ var loki = require("lokijs");
 var db = new loki('loki.json');
 var userDB = db.addCollection('user');
 var messengerDB = db.addCollection("messenger");
+db.loadDatabase();
 
 module.exports.userDB = {
     list: (toWhere) => {
         if (toWhere == "toClient" || !toWhere) {
             return userDB.data.filter((data) => {
-                return data.connectionID.length > 0
+                return data.connectionID.length > 0;
             }).map((data) => {
                 return {
                     "facebookID": data.facebookID,
                     "name": data.name,
                     "status": data.status,
                     "color": data.color,
-                }
+                };
             });
         } else if (toWhere == "toDatabase") {
             return userDB.data;
@@ -34,7 +35,7 @@ module.exports.userDB = {
         } else if (property === "socketID") {
             return userDB.data.filter((data) => {
                 return data.connectionID.filter((connections) => {
-                    return connections[1] === socketID;
+                    return connections[1] === value;
                 }).length > 0;
             }).length > 0;
         } else {
@@ -47,6 +48,7 @@ module.exports.userDB = {
             return data.facebookID == facebookID;
         }, (data) => {
             data.connectionID.push([sessionID, socketID]);
+            db.saveDatabase();
             return data;
         });
     },
@@ -60,16 +62,17 @@ module.exports.userDB = {
                 if (value[0] == sessionID && value[1] == socketID) {
                     data.connectionID.splice(index, 1);
                 }
-            })
+            });
+            db.saveDatabase();
             return data;
-        })
+        });
     },
     getUser: (sessionID) => {
         try {
             return userDB.chain().find().where((obj)=>{
                 return obj.connectionID.filter((connectionID)=>{
                     return connectionID[0] == sessionID;
-                }).length > 0
+                }).length > 0;
             }).data()[0];
         } catch(e){
             console.log(e);
@@ -78,6 +81,7 @@ module.exports.userDB = {
     },
     addUser: (userObj) => {
         userDB.insert(userObj);
+        db.saveDatabase();
     }
 };
 module.exports.messengerDB = {
@@ -93,9 +97,10 @@ module.exports.messengerDB = {
         }
     },
     list: (number) => {
-        return messengerDB.chain().find().simplesort("time").limit(number).data();
+        return messengerDB.chain().find().simplesort("time", true).limit(number).simplesort("time").data();
     },
     addMessenger: (messengerObj) => {
         messengerDB.insert(messengerObj);
-    },
-}
+        db.saveDatabase();
+    }
+};
