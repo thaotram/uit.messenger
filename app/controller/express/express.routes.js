@@ -10,6 +10,10 @@ module.exports["/info"] = function (req, res) {
     res.render('info');
 };
 
+module.exports["/report"] = function (req, res) {
+    res.render('report');
+};
+
 module.exports["/js"] = function (req, res) {
     exec(bundle, function (error, stdout, stderr) {
         if (error) {
